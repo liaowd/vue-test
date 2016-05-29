@@ -19,19 +19,35 @@
     </style>
 </head>
 <body>
-
 <div id="app">
   {{ message }}
 </div>
-
+<!-- VM -->
+<hr>
 <div id="apple">
     <p>p13:{{p13}}</p>
     <p>p15:{{p15}}</p>
 </div>
+<!-- 切换M数据模型 -->
+<hr>
+<div id="tiaogao">
+    <p>你的跳高成绩为:{{result}}米</p>
+    <p v-if="higher100">成绩超过100米！看起来不错啊！</p>
+    <p v-if="result>highest">恭喜你取得最佳成绩</p>
+    <button @click="qingzhu">庆祝一下吧</button>
+</div>
+<!-- 计算属性 getter -->
+<div id="tiaogao2">
+    <p>你的跳高成绩为:{{result}}米</p>
+    <p v-if="higher100">成绩超过100米！看起来不错啊！</p>
+    <p v-if="result>highest">恭喜你取得最佳成绩</p>
+    <button @click="qingzhu">庆祝一下吧</button>
+</div>
 
-<script>
 
-</script>
+
+
+
 <script type="text/javascript" src='js/index.js'></script>
 </body>
 </html>
