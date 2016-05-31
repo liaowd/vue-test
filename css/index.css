@@ -4,3 +4,12 @@
 .banner ul li {
     float: left;
 }
+
+.blue{
+	background-color:blue;
+	height:30px;
+}
+.green{
+	background-color:green;
+	height:50px;
+}

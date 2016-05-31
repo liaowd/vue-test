@@ -44,7 +44,7 @@ var Tiao=new Vue({
 })
 
 
-// 绑定了计算属性，自动变化，不用手动调用函数。
+// ***************绑定了计算属性，自动变化，不用手动调用函数。
 var Niu2={
 	result:102,
 	higher100:false,
@@ -59,16 +59,31 @@ var Niu2={
 	}
 
 }
-
 var Tiao2= new Vue({
 	el:"#tiaogao2",
 	data:Niu2,
 	computed:{
 		higher100:function(){
-			return	this.result>100?this.higher100=true:this.higher100=false;
+			// return	this.result>100?this.higher100=true:this.higher100=false;
+			return	this.result>100||false;
 		}
 	},
 
 })
 
-// *****************************************************************
+// **********绑定类  绑定内联样式*****************************************************
+var Bg={
+	"blue":true,
+	"green":false
+}
+var Hg={
+	"height":"35px",
+	"border":"1px solid red"
+}
+var CSbind=new Vue({
+	el:".lei",
+	data:{
+		Bg:Bg,
+		Hg:Hg
+	}
+})
