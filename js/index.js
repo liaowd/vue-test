@@ -87,3 +87,22 @@ var CSbind=new Vue({
 		Hg:Hg
 	}
 })
+
+// ********条件渲染*********************************************************
+var Tj=new Vue({
+	el:".tiaojian",
+	data:{
+		bucuo:false,
+		queryResult:true,
+		dt:true,
+		yc:true,
+		// items:[{"不错","真的"}]
+		items:[
+			{name:"dance"},
+			{name:"lives"}
+		],
+		gn:['ht','fy']
+	}
+})
+Tj.bucuo=true;
+
