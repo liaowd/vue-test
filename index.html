@@ -1,1 +1,132 @@
-Hello World !
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <!--<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>-->
+    <!--<script src="js/jquery-1.11.3.js" type="text/javascript"></script>-->
+    <!--<script src="js/bootstrap.js"></script>-->
+    <link href="css/index.css" rel="stylesheet" type="text/css"/>   
+    <script src="zepto-1.1.6/src/zepto.js"></script>
+    <script src="zepto-1.1.6/src/event.js"></script>
+    <script src="zepto-1.1.6/src/touch.js"></script>
+    <script type="text/javascript" src='js/vue.js'></script>
+    <style>
+        body{
+            background-color:#999;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+  {{ message }}
+</div>
+<!-- VM -->
+<hr>
+<div id="apple">
+    <p>p13:{{p13}}</p>
+    <p>p15:{{p15}}</p>
+</div>
+<!-- 切换M数据模型 -->
+<hr>
+<div id="tiaogao">
+    <p>你的跳高成绩为:{{result}}米</p>
+    <p v-if="higher100">成绩超过100米！看起来不错啊！</p>
+    <p v-if="result>highest">恭喜你取得最佳成绩</p>
+    <button @click="qingzhu">庆祝一下吧</button>
+</div>
+<!-- 计算属性 getter -->
+<div id="tiaogao2">
+    <p>你的跳高成绩为:{{result}}米</p>
+    <p v-if="higher100">成绩超过100米！看起来不错啊！</p>
+    <p v-if="result>highest">恭喜你取得最佳成绩</p>
+    <button @click="qingzhu">庆祝一下吧</button>
+</div>
+
+<!-- 类的绑定和内联样式的绑定 -->
+<div class="lei">
+    <div id="bgChange" v-bind:class="Bg"></div>
+    <div id="hgChange" v-bind:style="Hg"></div>    
+</div>
+
+<!-- 条件渲染 -->
+<div class="tiaojian">
+    <!-- v-if 与 v-else 两个DOM元素必须相邻 -->
+    <p v-if="bucuo">干得漂亮伙计~</p>
+    <p v-else>糟糕透了！</p>
+    <p>你觉得呢</p>
+    <p v-if="bucuo">你肯定也觉得不错啦！</p>
+
+
+    <template v-if="queryResult">
+        <ul>
+            <li>2016.05.30，辣宴</li>
+            <li>似曾相识燕归来</li>
+            <li>幸 福</li>
+            <li v-if="dt">为何我不懂这个道理？</li>
+            <li v-show="yc">是否有？</li>
+        </ul>
+    </template>
+    
+    <!-- v-for = 数组元素 in 数组 -->
+    <ul>
+        <li v-for="item in items">{{item.name}}</li>
+    </ul>
+    <ul>
+        <li v-for="gl in gn">{{$index+1+'号'}}、{{gl}}</li>
+    </ul>
+
+    <!--  -->
+
+</div>
+
+<!-- v-for   v-for template -->
+<div id="planet">
+    <table>
+        <tr>
+            <td>行星</td>
+            <td>半径</td>
+            <td>温度</td>
+            <td>适合居住？</td>
+        </tr>
+        <!-- 数组v-for -->
+            <template v-for="one in planets">
+                <tr>
+                    <td>{{$index+1}}、{{one.name}}</td>
+                    <td> {{one.radius}}</td>
+                    <td>{{one.temperature}}</td>
+                    <td>{{one.isJuzhu}}</td>
+                </tr>
+            </template>
+    </table>
+
+
+    <!-- 对象v-for -->
+    <ul>
+        <template v-for="value in Stu">
+            <li></li>
+        </template>
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src='js/index.js'></script>
+</body>
+</html>
