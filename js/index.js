@@ -88,7 +88,7 @@ var CSbind=new Vue({
 	}
 })
 
-// ********条件渲染*********************************************************
+// ********条件渲染*列表渲染********************************************************
 var Tj=new Vue({
 	el:".tiaojian",
 	data:{
@@ -105,4 +105,65 @@ var Tj=new Vue({
 	}
 })
 Tj.bucuo=true;
+
+
+
+
+// v-for  template***************************************
+var Planet=new Vue({
+	el:"#planet",
+	data:{
+		// 数组v-for 
+		planets:[
+			{
+				name:"水星",
+				radius:'9km',
+				temperature:'500',
+				isJuzhu:''
+			},
+			{
+				name:"金星",
+				radius:'14km',
+				temperature:'200',
+				isJuzhu:''
+			},
+			{
+				name:"地球",
+				radius:'23km',
+				temperature:'20',
+				isJuzhu:''
+			}
+		]
+	},
+	methods:{
+		juzhu:function(){
+			// console.log(this);
+			// console.log(this.planets[0])
+			for(var index in this.planets){
+				console.log(this.planets[index].name)
+				if(this.planets[index].temperature<50){
+					console.log(this.planets[index].name)
+					this.planets[index].isJuzhu='是'
+				}else{
+					this.planets[index].isJuzhu='否'
+				}
+			}
+		}
+	}
+})
+
+Planet.juzhu();
+
+// Planet.planets.pop();
+
+
+
+
+
+
+
+
+
+
+
 

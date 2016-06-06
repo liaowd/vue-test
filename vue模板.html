@@ -61,9 +61,9 @@
 
     <template v-if="queryResult">
         <ul>
-            <li>2016.05.30，我们去了辣宴吃饭</li>
+            <li>2016.05.30，辣宴</li>
             <li>似曾相识燕归来</li>
-            <li>幸福</li>
+            <li>幸 福</li>
             <li v-if="dt">为何我不懂这个道理？</li>
             <li v-show="yc">是否有？</li>
         </ul>
@@ -80,6 +80,52 @@
     <!--  -->
 
 </div>
+
+<!-- v-for   v-for template -->
+<div id="planet">
+    <table>
+        <tr>
+            <td>行星</td>
+            <td>半径</td>
+            <td>温度</td>
+            <td>适合居住？</td>
+        </tr>
+        <!-- 数组v-for -->
+            <template v-for="one in planets">
+                <tr>
+                    <td>{{$index+1}}、{{one.name}}</td>
+                    <td> {{one.radius}}</td>
+                    <td>{{one.temperature}}</td>
+                    <td>{{one.isJuzhu}}</td>
+                </tr>
+            </template>
+    </table>
+
+
+    <!-- 对象v-for -->
+    <ul>
+        <template v-for="value in Stu">
+            <li></li>
+        </template>
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <script type="text/javascript" src='js/index.js'></script>
