@@ -13,3 +13,11 @@
 	background-color:green;
 	height:50px;
 }
+
+button{
+	background-color:#3c8ffe;
+	border:none;
+	padding:0px;
+	border-style:outset;
+	border-style:inset;
+}

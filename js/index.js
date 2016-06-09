@@ -133,7 +133,11 @@ var Planet=new Vue({
 				temperature:'20',
 				isJuzhu:''
 			}
-		]
+		],
+		Stu:{
+			'LWD':'good',
+			'FEF':'bad'
+		}
 	},
 	methods:{
 		juzhu:function(){
