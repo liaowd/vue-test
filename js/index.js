@@ -19,7 +19,7 @@ var applePrice=new Vue({
 		}
 	},
 })
-applePrice.dazhe()
+applePrice.dazhe()  //不规范的写法
 
 
 
@@ -137,7 +137,8 @@ var Planet=new Vue({
 		Stu:{
 			'LWD':'good',
 			'FEF':'bad'
-		}
+		},
+		nianling:''
 	},
 	methods:{
 		juzhu:function(){
@@ -152,6 +153,11 @@ var Planet=new Vue({
 					this.planets[index].isJuzhu='否'
 				}
 			}
+		},
+		dayin:function(){
+			console.log("事件打印")
+			console.log(event.target)
+			console.log(event)
 		}
 	}
 })

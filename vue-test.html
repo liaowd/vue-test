@@ -109,6 +109,26 @@
             <li>{{dent}}</li>
         </template>
     </ul>
+
+    <!-- 事件绑定、除了原生的click，还可以绑定zepto的tap -->
+    <button v-on:tap="dayin()">点我打印console</button>
+
+    <!-- v-model表单控件绑定 -->
+    <p>你选择移民目的地：{{xingqiu}}</p>
+    <form id="yimin">
+        <h3>移民申请表</h3>
+        你的姓名：<input type="" name="xingming"><br>
+        你申请的移民目的地：
+        <select name="mudidi">
+            <option>月球</option>
+            <option>火星</option>
+            <option>土卫六</option>
+        </select><br>
+        你的年龄：<input type="text" name="nianling" v-model="nianling" ><br>
+        旅途中，你能接受的食物：
+        
+        <br>
+    </form>
 </div>
 
 
