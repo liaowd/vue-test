@@ -111,23 +111,47 @@
     </ul>
 
     <!-- 事件绑定、除了原生的click，还可以绑定zepto的tap -->
-    <button v-on:tap="dayin()">点我打印console</button>
+    <button v-on:tap="dayin()">点我(tap)打印console</button>
+
 
     <!-- v-model表单控件绑定 -->
-    <p>你选择移民目的地：{{xingqiu}}</p>
+    <p>你选择移民目的地：{{mudidi}}</p>
+
     <form id="yimin">
         <h3>移民申请表</h3>
-        你的姓名：<input type="" name="xingming"><br>
+        你的姓名：<input type="" name="xingming" v-model="Shenqing.xingming"><br>
         你申请的移民目的地：
-        <select name="mudidi">
+        <select name="mudidi" v-model="Shenqing.mudidi">
             <option>月球</option>
             <option>火星</option>
             <option>土卫六</option>
         </select><br>
-        你的年龄：<input type="text" name="nianling" v-model="nianling" ><br>
-        旅途中，你能接受的食物：
-        
+        你的年龄：<input type="number" name="nianling" min='1' v-model="Shenqing.nianling" ><br>
+        旅途中，你不能接受的食物：
+
+
+        <!-- <input type="checkbox" name="unaccepted" value="chuancai"><label for=""></label> -->
+        <!-- 至少留下一个checkbox？ -->
+        <input type="checkbox" value="chuancaiX" id="chuancai" v-model="Shenqing.unaccepted">
+            <label for="chuancai" >川菜</label>
+        <input type="checkbox" value="xiangcai" id="xiangcai" v-model="Shenqing.unaccepted">
+            <label for="xiangcai">湘菜</label>
+        <input type="checkbox" value="yuecai" id="yuecai" v-model="Shenqing.unaccepted">
+            <label for="yuecai">粤菜</label>
+        <input type="checkbox" value="gancai" id="gancai" v-model="Shenqing.unaccepted">
+            <label for="gancai">干菜</label>
         <br>
+
+        你的肤色是：
+        <input type="radio" name="fuse" v-model="Shenqing.fuse" value="yellow" id="yellow">
+            <label for="yellow">黄色</label>
+        <input type="radio" name="fuse" v-model="Shenqing.fuse" value="black" id="black">
+            <label for="black">黑色</label>
+        <input type="radio" name="fuse" v-model="Shenqing.fuse" value="white" id="white">
+            <label for="white">白色</label>
+        <input type="radio" name="fuse" v-model="Shenqing.fuse" value="hybird" id="hybird">
+            <label for="hybird">混合</label>
+
     </form>
 </div>
 

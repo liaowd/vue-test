@@ -138,7 +138,15 @@ var Planet=new Vue({
 			'LWD':'good',
 			'FEF':'bad'
 		},
-		nianling:''
+		// 表单绑定 双向绑定（其他是单向？M->V？） v-model
+		Shenqing:{
+			xingming:'张三',
+			mudidi:'火星',
+			nianling:'32',
+			// 表单绑定checkbox为数组，需要初始化为数组。value属性会进入数组
+			unaccepted:[],
+			fuse:'yellow',
+		},
 	},
 	methods:{
 		juzhu:function(){
@@ -154,6 +162,7 @@ var Planet=new Vue({
 				}
 			}
 		},
+		// <!-- 事件绑定、除了原生的click，还可以绑定zepto的tap -->
 		dayin:function(){
 			console.log("事件打印")
 			console.log(event.target)
@@ -163,6 +172,13 @@ var Planet=new Vue({
 })
 
 Planet.juzhu();
+var biao={
+	xingming:Planet.xingming,
+	mudidi:Planet.mudidi,
+	nianling:Planet.nianling,
+	unaccepted:Planet.unaccepted,
+	fuse:Planet.fuse
+}
 
 // Planet.planets.pop();
 
