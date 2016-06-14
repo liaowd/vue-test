@@ -109,7 +109,7 @@ Tj.bucuo=true;
 
 
 
-// v-for  template***************************************
+// v-for  template***************************************************************************
 var Planet=new Vue({
 	el:"#planet",
 	data:{
@@ -121,7 +121,7 @@ var Planet=new Vue({
 				temperature:'500',
 				isJuzhu:''
 			},
-			{
+			{ 
 				name:"金星",
 				radius:'14km',
 				temperature:'200',
@@ -182,8 +182,35 @@ var biao={
 
 // Planet.planets.pop();
 
+// **********组件********************************************************
+// 定义
+var TaocanA=Vue.extend({
+	// template:'<div>看起来不错</div>'
+	template:'<div class="title"> <p class="title">{{title}}</p> <p class="price">{{price}}</p> </div>'
+})
 
+// 注册
+Vue.component('shangpin',TaocanA)	
 
+// 实例化
+new Vue({
+	el:'#shangpinliebiao',
+	data:{
+		title:'只能是普通字符串？',
+		price:"只能是普通字符串？",
+		item:[
+			{
+				title:'题目1',
+				price:"价格1",				
+			},
+			{
+				title:'题目2',
+				price:"价格2",
+			},
+		]		
+	}
+
+})
 
 
 
