@@ -216,7 +216,25 @@ new Vue({
 
 
 
+// ***jQuery.Deferred()***********************************************************************************
+var yanchi=new $.Deferred;
 
+setTimeout(function(){
+	console.log('延迟时间到')
+	yanchi.resolve();
+},2000)
+function wancheng1(){
+	for(var i=0;i<10;i++){
+		console.log('第1个马上执行')
+	}
+	setTimeout(function(){
+		console.log("第1个延迟函数完成了")
+	},1000)
+}
+function wancheng2(){
+	console.log("第2个延迟函数完成了")
+}
+yanchi.done([wancheng1,wancheng2])
 
 
 
