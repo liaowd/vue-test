@@ -32,7 +32,7 @@ var Niu1={
 		this.result>100?this.higher100=true:this.higher100=false;
 	},
 	qingzhu:function(){
-		console.log("给你庆祝啦！偷偷给你的成绩减一点");
+		console.log("成绩减一点");
 		Niu1.result=99;    //此时higher100没有更新！没有执行init函数（改变higher100的）
 		console.log(Niu1.result)
 	}
